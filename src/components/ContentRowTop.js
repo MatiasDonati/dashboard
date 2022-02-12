@@ -27,7 +27,8 @@ class ContentRowTop extends Component {
         
         this.setState(
             {
-                producto: data.length
+                producto: data[0].name,
+				imagen: data[0].img_url
             }
         )
     }
@@ -38,6 +39,10 @@ class ContentRowTop extends Component {
     }
 	render(){
 		let contenido;
+		let img = this.state.imagen
+		console.log(img);
+
+
 
         if(this.state.producto == ""){
             contenido = <p> Cargando...</p>
@@ -65,10 +70,11 @@ class ContentRowTop extends Component {
 							<div className="card shadow mb-4">
 								<div className="card-header py-3">
 									<h5 className="m-0 font-weight-bold text-gray-800">Producto Seleccionado</h5>
+									<p>{contenido}</p>
 								</div>
 								<div className="card-body">
 									<div className="text-center">
-										<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={imagenFondo} alt=" Star Wars - Mandalorian "/>
+										<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={imagenFondo} alt=" Imagen Seleccionada "/>
 									</div>
 									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa citationem ratione aperiam voluptatum non corporis ratione aperiam voluptatum quae dolorem culpa ratione aperiam voluptatum?</p>
 									<a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>
