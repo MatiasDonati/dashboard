@@ -15,7 +15,7 @@ function App() {
           <ApiTest /> */}
           <ContentRowMovies />
       	<div id="wrapper">
-          <SideBar />
+          {/* <SideBar /> */}
           <ContentWrapper />
         </div>
     </React.Fragment>
