@@ -64,7 +64,7 @@ class ContentRowMovies extends Component{
         <>
         					<div className="row">
 
-{/*<!-- Movies in Data Base -->*/}
+{/*<!-- Movies in Dta Base -->*/}
 <div className="col-md-4 mb-4">
     <div className="card border-left-primary shadow h-100 py-2">
         <div className="card-body">
