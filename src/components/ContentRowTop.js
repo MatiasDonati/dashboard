@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import imagenFondo from '../assets/images/mandalorian.jpg'
 
+
 class ContentRowTop extends Component {
 
 	constructor(props){
@@ -28,7 +29,9 @@ class ContentRowTop extends Component {
         this.setState(
             {
                 producto: data[0].name,
-				imagen: data[0].img_url
+				imagen: data[0].img_url,
+				detalle: data[0].description
+				
             }
         )
     }
@@ -40,7 +43,9 @@ class ContentRowTop extends Component {
 	render(){
 		let contenido;
 		let img = this.state.imagen
+		let  descripcion = this.state.detalle
 		console.log(img);
+		console.log(descripcion)
 
 
 
@@ -76,7 +81,7 @@ class ContentRowTop extends Component {
 									<div className="text-center">
 										<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={imagenFondo} alt=" Imagen Seleccionada "/>
 									</div>
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa citationem ratione aperiam voluptatum non corporis ratione aperiam voluptatum quae dolorem culpa ratione aperiam voluptatum?</p>
+									<p>{descripcion}</p>
 									<a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>
 								</div>
 							</div>

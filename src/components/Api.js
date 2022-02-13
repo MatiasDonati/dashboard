@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import imagenFondo from '../assets/images/stormtrooper.jpg'
+import imagenOtra from '../assets/images/jordan-walke.png'
+
 
 class Api extends Component {
     constructor(props){
@@ -50,7 +53,8 @@ class Api extends Component {
         return(
             <div>
                 {contenido}
-                <img src={imagen} />
+                <img src={imagenFondo} />
+                <img src={imagenOtra} />
             </div>
         )
     }
