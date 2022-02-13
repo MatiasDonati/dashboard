@@ -54,7 +54,7 @@ class Api extends Component {
             <div>
                 {contenido}
                 <img src={imagenFondo} />
-                <img src={imagenOtra} />
+                <img src="dashboard/dashboard/src/assets/images/jordan-walke.png" />
             </div>
         )
     }
