@@ -9,9 +9,8 @@ import Api from './Api'
 function App() {
   return (
     <React.Fragment>
-          {/* <h1>Api</h1>
-          <Api />
-          <h1>ApiTest</h1>
+          {/* <Api /> */}
+          {/* <h1>ApiTest</h1>
           <ApiTest /> */}
           <ContentRowMovies />
       	<div id="wrapper">

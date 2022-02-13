@@ -25,7 +25,8 @@ class Api extends Component {
         
         this.setState(
             {
-                producto: data.length
+                producto: data.length,
+                img: data[0].img_url
             }
         )
     }
@@ -38,6 +39,7 @@ class Api extends Component {
     render(){
 
         let contenido;
+        let imagen = this.state.img
 
         if(this.state.producto == ""){
             contenido = <p> Cargando...</p>
@@ -48,7 +50,7 @@ class Api extends Component {
         return(
             <div>
                 {contenido}
-                ----------------------------------------------------------------------------------------------------------------------------------------------
+                <img src={imagen} />
             </div>
         )
     }
