@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import imagenFondo from '../assets/images/mandalorian.jpg'
+import ListaProductos from './ListaProducts';
 
 
 class ContentRowTop extends Component {
@@ -30,7 +31,8 @@ class ContentRowTop extends Component {
             {
                 producto: data[0].name,
 				imagen: data[0].img_url,
-				detalle: data[0].description
+				detalle: data[0].description,
+				data: data
 				
             }
         )
@@ -44,8 +46,10 @@ class ContentRowTop extends Component {
 		let contenido;
 		let img = this.state.imagen
 		let  descripcion = this.state.detalle
+		let data = this.state.data
 		console.log(img);
 		console.log(descripcion)
+		console.log(data)
 
 
 
@@ -63,14 +67,10 @@ class ContentRowTop extends Component {
 					<div className="d-sm-flex aligns-items-center justify-content-between mb-4">
 						<h1 className="h3 mb-0 text-gray-800"></h1>
 					</div>
-				
-					{/*<!-- Content Row Movies-->*/}
-				{/*<!-- End movies in Data Base -->*/}
-					
-	
+		
 					{/*<!-- Content Row Last Movie in Data Base -->*/}
+
 					<div className="row">
-						{/*<!-- Last Movie in DB -->*/}
 						<div className="col-lg-6 mb-4">
 							<div className="card shadow mb-4">
 								<div className="card-header py-3">
@@ -92,80 +92,12 @@ class ContentRowTop extends Component {
 						<div className="col-lg-6 mb-4">						
 							<div className="card shadow mb-4">
 								<div className="card-header py-3">
-									<h5 className="m-0 font-weight-bold text-gray-800">Lista de Productos (HACER MAP DE TODOS LOS NAMES)</h5>
+									<h5 className="m-0 font-weight-bold text-gray-800">Lista de Productos</h5>
 								</div>
 								<div className="card-body">
 									<div className="row">
-										<div className="col-lg-6 mb-4">
-											<div className="card bg-dark text-white shadow">
-												<div className="card-body">
-													Acción
-												</div>
-											</div>
-										</div>
-										<div className="col-lg-6 mb-4">
-											<div className="card bg-dark text-white shadow">
-												<div className="card-body">
-													Animación
-												</div>
-											</div>
-										</div>
-										<div className="col-lg-6 mb-4">
-											<div className="card bg-dark text-white shadow">
-												<div className="card-body">
-													Aventura
-												</div>
-											</div>
-										</div>
-										<div className="col-lg-6 mb-4">
-											<div className="card bg-dark text-white shadow">
-												<div className="card-body">
-													Ciencia Ficción
-												</div>
-											</div>
-										</div>
-										<div className="col-lg-6 mb-4">
-											<div className="card bg-dark text-white shadow">
-												<div className="card-body">
-													Comedia
-												</div>
-											</div>
-										</div>
-										<div className="col-lg-6 mb-4">
-											<div className="card bg-dark text-white shadow">
-												<div className="card-body">
-													Documental
-												</div>
-											</div>
-										</div>
-										<div className="col-lg-6 mb-4">
-											<div className="card bg-dark text-white shadow">
-												<div className="card-body">
-													Drama
-												</div>
-											</div>
-										</div>
-										<div className="col-lg-6 mb-4">
-											<div className="card bg-dark text-white shadow">
-												<div className="card-body">
-													Fantasia
-												</div>
-											</div>
-										</div>
-										<div className="col-lg-6 mb-4">
-											<div className="card bg-dark text-white shadow">
-												<div className="card-body">
-													Infantiles
-												</div>
-											</div>
-										</div>
-										<div className="col-lg-6 mb-4">
-											<div className="card bg-dark text-white shadow">
-												<div className="card-body">
-													Musical
-												</div>
-											</div>
-										</div>
+									
+									<ListaProductos />
 
 									</div>
 								</div>
@@ -173,8 +105,6 @@ class ContentRowTop extends Component {
 						</div>
 					</div>
 				</div>
-				{/*<!--End Content Row Top-->*/}
-
         </React.Fragment>
     )
 	}
