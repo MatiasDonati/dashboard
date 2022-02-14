@@ -1,65 +1,21 @@
 import React, { Component } from 'react';
 
 class ContentRowMovies extends Component{
-    
-    constructor(props){
-        super(props);
-        this.state={
-            producto: ""
-        }
-    }
-
-    apiCall(url, consecuencia){
-        fetch(url)
-        .then( response => response.json())
-        .then( data => consecuencia(data))
-        .catch( error => console.log(error))
-    }
-
-    componentDidMount(){
-        console.log('Montado!!');
-        this.apiCall('http://www.localhost:3001/dashboard/products', this.mostrarApi)
-        this.apiCall('http://www.localhost:3001/dashboard/users', this.verApi)
-    }
-
-    verApi = (data) => {
-        console.log(data);
-        
-        this.setState(
-            {
-                users: data.length,
-            }
-        )
-    }
-    mostrarApi = (data) => {
-        console.log(data);
-        
-        this.setState(
-            {
-                producto: data.length,
-            }
-        )
-    }
-
-    componentDidUpdate(){
-        console.log('Actualizado!!');
-
-    }
 
     render(){
-        let contenido;
+        let cantidadProductos;
 
-        if(this.state.producto == ""){
-            contenido = <p> Cargando...</p>
+        if(this.props.cantidadDeProductos == ""){
+            cantidadProductos = <p> Cargando...</p>
         }else{
-            contenido = <h2>{this.state.producto}</h2>
+            cantidadProductos = <h2>{this.props.cantidadDeProductos}</h2>
         }
-        let usuarios;
+        let cantidadDeUsuarios;
 
-        if(this.state.users == ""){
-            usuarios = <p> Cargando...</p>
+        if(this.props.cantidadDeUsuarios == ""){
+            cantidadDeUsuarios = <p> Cargando...</p>
         }else{
-            usuarios = <h2>{this.state.users}</h2>
+            cantidadDeUsuarios = <h2>{this.props.cantidadDeUsuarios}</h2>
         }
 
     return(
@@ -72,7 +28,7 @@ class ContentRowMovies extends Component{
                     <div className="row no-gutters align-items-center">
                         <div className="col mr-2">
                             <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Productos</div>
-                            <div className="h5 mb-0 font-weight-bold text-gray-800">{contenido}</div>
+                            <div className="h5 mb-0 font-weight-bold text-gray-800">{cantidadProductos}</div>
                         </div>
                         <div className="col-auto">
                             <i className="fas fa-film fa-2x text-gray-300"></i>
@@ -107,7 +63,7 @@ class ContentRowMovies extends Component{
                         <div className="col mr-2">
                             <div className="text-xs font-weight-bold text-warning text-uppercase mb-1">Total Usuarios
                             </div>
-                            <div className="h5 mb-0 font-weight-bold text-gray-800">{usuarios}</div>
+                            <div className="h5 mb-0 font-weight-bold text-gray-800">{cantidadDeUsuarios}</div>
                         </div>
                         <div className="col-auto">
                             <i className="fas fa-user fa-2x text-gray-300"></i>

@@ -1,36 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-
-function ListaProductos(){
-
-    const url = 'http://www.localhost:3001/dashboard/products';
-    const [todos, setTodos] = useState()
-    const fetchApi = async () => {
-        const response = await fetch(url)
-        const responseJson = await response.json()
-        setTodos(responseJson)
-    }
-    console.log(todos)
-
-    useEffect(() => {
-        fetchApi()
-    }, [])
-
+function ListaProductos(props){
 
     return (
         <React.Fragment>
-            { !todos ? 'Cargando...' : 
-            todos.map((todo, index) => {
+            { !props.productos ? <p> Cargando... </p> : 
+            props.productos.map((producto, index) => {
 
-                return <div className="col-lg-6 mb-4">
+                return <div onClick={()=>{props.onProductoSeleccionado(index)}} className="col-lg-6 mb-4">
                             <div className="card bg-dark text-white shadow">
                                 <div className="card-body">
-                                  {todo.name}
+                                        <span>{producto.name}</span>
+                                        <p>$ {producto.price}</p>
                                 </div>
                             </div>
                         </div>
             })
             }
+            
         </React.Fragment>
     )
 }
