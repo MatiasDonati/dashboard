@@ -15,6 +15,7 @@ function ApiTest (){
     }, [])
     return(
         <div>
+            <h1>Prueba Map  (Componente API TEST) </h1>
             <ul>
             { !todos ? 'Cargando...' : 
             todos.map((todo, index) => {
