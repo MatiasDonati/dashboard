@@ -8,7 +8,8 @@ class ContentRowTop extends Component {
 	constructor(props){
         super(props);
         this.state={
-            producto: ""
+            producto: "",
+			otroDetalle: ""
         }
     }
 
@@ -32,8 +33,7 @@ class ContentRowTop extends Component {
                 producto: data[0].name,
 				imagen: data[0].img_url,
 				detalle: data[0].description,
-				data: data
-				
+				otroDetalle: data,
             }
         )
     }
@@ -46,11 +46,10 @@ class ContentRowTop extends Component {
 		let contenido;
 		let img = this.state.imagen
 		let  descripcion = this.state.detalle
-		let data = this.state.data
-		console.log(img);
-		console.log(descripcion)
-		console.log(data)
-
+		let arrayProds = this.state.otroDetalle
+		console.log("IMAGEN!! "+img);
+		console.log("DESCRIPCION!! "+descripcion)
+		console.log(arrayProds)
 
 
         if(this.state.producto == ""){
@@ -58,8 +57,7 @@ class ContentRowTop extends Component {
         }else{
             contenido = <h2>{this.state.producto}</h2>
         }
-
-
+			
     return(
         <React.Fragment>
 				{/*<!-- Content Row Top -->*/}

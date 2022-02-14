@@ -8,6 +8,7 @@ function ApiTest (){
         const responseJson = await response.json()
         setTodos(responseJson)
     }
+    console.log(todos)
 
     useEffect(() => {
         fetchApi()
