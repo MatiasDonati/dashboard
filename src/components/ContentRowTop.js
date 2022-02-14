@@ -8,8 +8,7 @@ class ContentRowTop extends Component {
 	constructor(props){
         super(props);
         this.state={
-            producto: "",
-			otroDetalle: ""
+
         }
     }
 
@@ -33,7 +32,7 @@ class ContentRowTop extends Component {
                 producto: data[0].name,
 				imagen: data[0].img_url,
 				detalle: data[0].description,
-				otroDetalle: data,
+				todos: data
             }
         )
     }
@@ -46,7 +45,7 @@ class ContentRowTop extends Component {
 		let contenido;
 		let img = this.state.imagen
 		let  descripcion = this.state.detalle
-		let arrayProds = this.state.otroDetalle
+		let arrayProds = this.state.todos
 		console.log("IMAGEN!! "+img);
 		console.log("DESCRIPCION!! "+descripcion)
 		console.log(arrayProds)
@@ -57,6 +56,7 @@ class ContentRowTop extends Component {
         }else{
             contenido = <h2>{this.state.producto}</h2>
         }
+
 			
     return(
         <React.Fragment>
@@ -90,7 +90,7 @@ class ContentRowTop extends Component {
 						<div className="col-lg-6 mb-4">						
 							<div className="card shadow mb-4">
 								<div className="card-header py-3">
-									<h5 className="m-0 font-weight-bold text-gray-800">Lista de Productos</h5>
+									<h5 className="m-0 font-weight-bold text-gray-800">Lista de Productos (HACER UN MAP DE PRODS POR TARJETA)</h5>
 								</div>
 								<div className="card-body">
 									<div className="row">
