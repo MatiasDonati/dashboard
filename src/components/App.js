@@ -11,7 +11,7 @@ function App() {
     <React.Fragment>
           {/* <Api />
           <h1>ApiTest</h1> */}
-          <ApiTest />
+          {/* <ApiTest /> */}
           <ContentRowMovies />
       	<div id="wrapper">
           <ContentWrapper />

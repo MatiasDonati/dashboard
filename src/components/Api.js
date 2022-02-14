@@ -29,7 +29,8 @@ class Api extends Component {
         this.setState(
             {
                 producto: data.length,
-                img: data[0].img_url
+                img: data[0].img_url,
+                todo: data
             }
         )
     }
@@ -43,6 +44,7 @@ class Api extends Component {
 
         let contenido;
         let imagen = this.state.img
+        let arrayProd = this.state.todo
 
         if(this.state.producto == ""){
             contenido = <p> Cargando...</p>
@@ -50,11 +52,12 @@ class Api extends Component {
             contenido = <h2>{this.state.producto}</h2>
         }
 
+
+
         return(
             <div>
                 {contenido}
                 <img src={imagenFondo} />
-                <img src="dashboard/dashboard/src/assets/images/jordan-walke.png" />
             </div>
         )
     }

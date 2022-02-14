@@ -1,81 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 function ListaProductos(){
-    
+
+    const url = 'http://www.localhost:3001/dashboard/products';
+    const [todos, setTodos] = useState()
+    const fetchApi = async () => {
+        const response = await fetch(url)
+        const responseJson = await response.json()
+        setTodos(responseJson)
+    }
+    console.log(todos)
+
+    useEffect(() => {
+        fetchApi()
+    }, [])
+
+
     return (
         <React.Fragment>
-            <div className="col-lg-6 mb-4">
-                <div className="card bg-dark text-white shadow">
-                    <div className="card-body">
-                        Acción
-                    </div>
-                </div>
-            </div>
+            { !todos ? 'Cargando...' : 
+            todos.map((todo, index) => {
 
-            <div className="col-lg-6 mb-4">
-                <div className="card bg-dark text-white shadow">
-                    <div className="card-body">
-                        Animación
-                    </div>
-                </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-                <div className="card bg-dark text-white shadow">
-                    <div className="card-body">
-                        Aventura
-                    </div>
-                </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-                <div className="card bg-dark text-white shadow">
-                    <div className="card-body">
-                        Ciencia Ficción
-                    </div>
-                </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-                <div className="card bg-dark text-white shadow">
-                    <div className="card-body">
-                        Comedia
-                    </div>
-                </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-                <div className="card bg-dark text-white shadow">
-                    <div className="card-body">
-                        Documental
-                    </div>
-                </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-                <div className="card bg-dark text-white shadow">
-                    <div className="card-body">
-                        Drama
-                    </div>
-                </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-                <div className="card bg-dark text-white shadow">
-                    <div className="card-body">
-                        Fantasia
-                    </div>
-                </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-                <div className="card bg-dark text-white shadow">
-                    <div className="card-body">
-                        Infantiles
-                    </div>
-                </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-                <div className="card bg-dark text-white shadow">
-                    <div className="card-body">
-                        Musical
-                    </div>
-                </div>
-            </div>
+                return <div className="col-lg-6 mb-4">
+                            <div className="card bg-dark text-white shadow">
+                                <div className="card-body">
+                                  {todo.name}
+                                </div>
+                            </div>
+                        </div>
+            })
+            }
         </React.Fragment>
     )
 }
