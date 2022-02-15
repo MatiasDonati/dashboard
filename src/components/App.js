@@ -5,8 +5,6 @@ import ContentRowMovies from './ContentRowMovies'
 import ApiTest from './ApiTest';
 import Api from './Api'
 
-
-
 class App extends Component {
 
         constructor(props){

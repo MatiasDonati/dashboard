@@ -2,24 +2,24 @@ import React, { Component } from 'react';
 
 class ContentRowMovies extends Component{
 
-    render(){
-        let cantidadProductos;
+render(){
+    let cantidadProductos;
 
-        if(this.props.cantidadDeProductos == ""){
-            cantidadProductos = <p> Cargando...</p>
-        }else{
-            cantidadProductos = <h2>{this.props.cantidadDeProductos}</h2>
-        }
-        let cantidadDeUsuarios;
+    if(this.props.cantidadDeProductos == ""){
+        cantidadProductos = <p> Cargando...</p>
+    }else{
+        cantidadProductos = <h2>{this.props.cantidadDeProductos}</h2>
+    }
+    let cantidadDeUsuarios;
 
-        if(this.props.cantidadDeUsuarios == ""){
-            cantidadDeUsuarios = <p> Cargando...</p>
-        }else{
-            cantidadDeUsuarios = <h2>{this.props.cantidadDeUsuarios}</h2>
-        }
+    if(this.props.cantidadDeUsuarios == ""){
+        cantidadDeUsuarios = <p> Cargando...</p>
+    }else{
+        cantidadDeUsuarios = <h2>{this.props.cantidadDeUsuarios}</h2>
+    }
 
-    return(
-        <>
+return(
+    <>
     <div className="row">
         {/*<!-- Movies in Dta Base -->*/}
         <div className="col-md-4 mb-4">
@@ -73,7 +73,7 @@ class ContentRowMovies extends Component{
             </div>
         </div>
     </div>
-        </>
+    </>
 )
 }
 }

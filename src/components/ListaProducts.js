@@ -17,7 +17,6 @@ function ListaProductos(props){
                         </div>
             })
             }
-            
         </React.Fragment>
     )
 }

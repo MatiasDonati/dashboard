@@ -17,11 +17,9 @@ class ContentRowTop extends Component {
 			productoSeleccionado: index
 		}
 		)
-
 	}
 
 	render(){
-		console.log(this.state.productoSeleccionado);
 		let producto = this.props.productos[this.state.productoSeleccionado]
 		let nombreProducto = <p> Cargando...</p>
 		let descripcionProducto = <p> Cargando...</p>
