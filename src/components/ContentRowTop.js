@@ -31,7 +31,7 @@ class ContentRowTop extends Component {
         if(producto){
 			nombreProducto = <h2>{producto.name}</h2>
             descripcionProducto = <h2>{producto.description}</h2>  
-			precioProducto = <h2>$ {producto.price}</h2>  
+			precioProducto = <h5>$ {producto.price}</h5>  
 			imagenProducto = <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={"http://localhost:3001/images/products/" + producto.img_url} alt=" Imagen Seleccionada "/>
         }
 
