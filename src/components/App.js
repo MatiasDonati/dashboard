@@ -10,7 +10,11 @@ class App extends Component {
           super(props);
           this.state={
             productos: [],
-            users: []
+            users: [],
+            sectionToShow: {
+              productos: true,
+              usuarios: false
+            }
           }
       }
 
@@ -46,7 +50,15 @@ class App extends Component {
           )
       }
 
-  render(){
+      setSectionToShow = (state) => {
+        this.setState({
+          sectionToShow: state
+        })
+      }
+      
+      
+      render(){
+    console.log(this.state);
     return (
       <React.Fragment>
             {/* <Api />
@@ -55,11 +67,13 @@ class App extends Component {
             <ContentRowMovies 
               cantidadDeUsuarios={this.state.users.length}
               cantidadDeProductos={this.state.productos.length}
+              sectionToShow={this.setSectionToShow.bind(this)}
             />
           <div id="wrapper">
             <ContentWrapper 
               productos={this.state.productos}
               users={this.state.users}
+              sectionToShow={this.state.sectionToShow}
             />
           </div>
       </React.Fragment>
