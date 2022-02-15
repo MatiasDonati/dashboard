@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SideBar from './SideBar';
 import ContentWrapper from './ContentWrapper';
 import ContentRowMovies from './ContentRowMovies'
 import ApiTest from './ApiTest';
@@ -60,6 +59,7 @@ class App extends Component {
           <div id="wrapper">
             <ContentWrapper 
               productos={this.state.productos}
+              users={this.state.users}
             />
           </div>
       </React.Fragment>

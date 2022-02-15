@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ListaProductos from './ListaProducts';
 
-
 class ContentRowTop extends Component {
 	constructor(props){
 		super(props)
