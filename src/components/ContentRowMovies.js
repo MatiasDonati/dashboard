@@ -27,8 +27,10 @@ class ContentRowMovies extends Component{
                 <div className="card-body">
                     <div className="row no-gutters align-items-center">
                         <div className="col mr-2">
-                            <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Productos</div>
-                            <div className="h5 mb-0 font-weight-bold text-gray-800">{cantidadProductos}</div>
+                            <h3>
+                            <div className="text-s font-weight-bold text-primary mb-1">Woodstack</div>
+                            </h3>
+                            <div className="h5 mb-0 font-weight-bold text-gray-800"></div>
                         </div>
                         <div className="col-auto">
                             <i className="fas fa-film fa-2x text-gray-300"></i>
@@ -44,8 +46,8 @@ class ContentRowMovies extends Component{
                 <div className="card-body">
                     <div className="row no-gutters align-items-center">
                         <div className="col mr-2">
-                            <div className="text-xs font-weight-bold text-success text-uppercase mb-1">Total Categorias</div>
-                            <div className="h5 mb-0 font-weight-bold text-gray-800">2</div>
+                            <div className="text-xs font-weight-bold text-success text-uppercase mb-1">Total Productos</div>
+                            <div className="h5 mb-0 font-weight-bold text-gray-800">{cantidadProductos}</div>
                         </div>
                         <div className="col-auto">
                             <i className="fas fa-award fa-2x text-gray-300"></i>
