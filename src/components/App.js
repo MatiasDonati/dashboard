@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import ContentWrapper from './ContentWrapper';
 import ContentRowMovies from './ContentRowMovies'
-import ApiTest from './ApiTest';
-import Api from './Api'
 
 class App extends Component {
 
@@ -61,9 +59,7 @@ class App extends Component {
     console.log(this.state);
     return (
       <React.Fragment>
-            {/* <Api />
-            <h1>ApiTest</h1> */}
-            {/* <ApiTest /> */}
+
             <ContentRowMovies 
               cantidadDeUsuarios={this.state.users.length}
               cantidadDeProductos={this.state.productos.length}
